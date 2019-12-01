@@ -5,3 +5,60 @@
 //insertOne()//
 //updateOne()//
 // export  ORM object in module.exports//
+
+var connection = require("../config/connection.js");
+function printQuestionMarks(num) {
+    var arr = [];
+  
+    for (var i = 0; i < num; i++) {
+      arr.push("?");
+    }
+  
+    return arr.toString();
+  }
+  // function that will run for select all from database//
+var orm = {
+    selectall: function (tableInput, cb){
+        var queryString = "select * from" + tableInput + ";";
+        connection.query(queryString, function(err, result){
+            if (err){
+                throwerr;
+            }
+            cd(result);
+        });
+    },
+    insertOne: function(table, cols,vals, cd){
+        var queryString = "INSERT INTO" + table;
+        queryString += "(";
+        queryString += cols.tostring();
+        queryString +=")";
+        queryString += "VALUES (";
+        queryString += printQuestionMarks(vals.lengh);
+        queryString += ")";
+        console.log(queryString);
+        connection.query(queryString, vals, function(err, result){
+            if (err){
+                throw err;
+            }
+            cd(result);
+        })
+    },
+    update: function(table, objColVals, condition, cb) {
+        var queryString = "UPDATE " + table;
+    
+        queryString += " SET ";
+        queryString += objToSql(objColVals);
+        queryString += " WHERE ";
+        queryString += condition;
+    
+        console.log(queryString);
+        connection.query(queryString, function(err, result) {
+          if (err) {
+            throw err;
+          }
+    
+          cb(result);
+        });
+    }
+} 
+module.exports = orm;
