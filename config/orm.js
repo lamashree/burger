@@ -17,30 +17,40 @@ function printQuestionMarks(num) {
     return arr.toString();
   }
   // function that will run for select all from database//
+  function objToSql(ob) {
+    // column1=value, column2=value2,...
+    var arr = [];
+  
+    for (var key in ob) {
+      arr.push(key + "=" + ob[key]);
+    }
+  
+    return arr.toString();
+  }
 var orm = {
     selectall: function (tableInput, cb){
-        var queryString = "select * from" + tableInput + ";";
+        var queryString = "SELECT * FROM " + tableInput + ";";
         connection.query(queryString, function(err, result){
             if (err){
-                throwerr;
+                throw err;
             }
-            cd(result);
+            cb(result);
         });
     },
-    insertOne: function(table, cols,vals, cd){
-        var queryString = "INSERT INTO" + table;
-        queryString += "(";
+    insertOne: function(table, cols,vals, cb){
+        var queryString = "INSERT INTO " + table;
+        queryString += " (";
         queryString += cols.tostring();
-        queryString +=")";
+        queryString +=") ";
         queryString += "VALUES (";
         queryString += printQuestionMarks(vals.lengh);
-        queryString += ")";
+        queryString += ") ";
         console.log(queryString);
         connection.query(queryString, vals, function(err, result){
             if (err){
                 throw err;
             }
-            cd(result);
+            cb(result);
         })
     },
     updateOne: function(table, objColVals, condition, cb) {
