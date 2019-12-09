@@ -3,19 +3,13 @@ let express =require("express")
 var PORT = process.env.PORT || 8080;
 
 var app = express();
-
+var Parser = require('body-parser');
 app.use(express.static("public"));
 
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-/*var handlebars = require('handlebars');
-var exphbs = require('exphbs');
-
-app.engine('hbsObject', exphbs.create(handlebars));
-app.set('view engine', 'hbsObject');*/
-// Set Handlebars.
 var exphbs = require("express-handlebars");
 
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));

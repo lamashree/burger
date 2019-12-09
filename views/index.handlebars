@@ -1,43 +1,66 @@
-<div id ="headerSection">
-<h2>Eat Da Burger: home</h2>
+<div id="headerSection">
+  <h1>Eat-DaBurger</h1>
 </div>
 
 <!-- Middle Section -->
 <div id="middleSection">
+  <h2>Listout your favorite burger</h2>
+  <img src="../assets/img/download.jpg" alt="burger icon" height="200" width="200" />
 
-<!-- Left -->
-<div class="leftMiddle">
-<div class="uneaten center">
-{{#each burger}}
-{{#unless devoured}}
-{{> burgers/burgerBlock devoured=1}}
-{{/unless}}
-{{/each}}
-</div>
-</div>
 
-<!-- Center -->
-<div class="centerMiddle">
-<div class="center">
-<input id="burgerName" type="text" placeholder="Name of Your Burger" data-eaten="0">
-<button id="addBurger" type="button">Add Your Burger</button>
-</div>
-</div>
 
-<!-- Right -->
-<div class="rightMiddle">
-<div class="eaten center">
-{{#each burger}}
-{{#if devoured}}
-{{> burgers/burgerBlock devoured=0}}
-{{/if}}
-{{/each}}
-</div>
-</div>
+  <div class="row">
 
-</div>
-<!-- End of Middle Section -->
+    <div class="col-md-12 ">
+      <div class="col-md-4">
+        <div class="leftBurgers">
+          <ul>
+            {{#each burgers}}
+            {{#unless this.devoured}}
+            <li>
+              <p class="burgerType">{{this.burger_name}}</p>
+              <form action="burgers/updateOne/{{this.id}}?_method=PUT" method="POST">
+                <input type="hidden" name="devoured" value="true">
+                <button class="btnDevour" type="submit">Devour it</button>
+              </form>
+            </li>
+            {{/unless}}
+            {{/each}}
+          </ul>
+        </div>
+      </div>
 
-<div id ="footerSection">
-<p>Created By shree</p>
+      <div class="col-md-4 text-center">
+        <div class="input">
+
+
+          <div class="form-group">
+            <form method="POST" action="burgers/insertOne" class="addOne text-center">
+              <textarea id="textArea" type="text" name="burger_name" rows="2" cols="40"></textarea>
+              <button id="btnCreate" type="submit">Create Your Burger!</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 text-left">
+        <div class="rightBurgers">
+          <h2 class="heading">Old Favorites</h2>
+          <ul>
+            {{#each burgers}}
+            {{#if this.devoured}}
+            <li>
+              <p class="burgerType">{{this.burger_name}}</p>
+              <form action="burgers/delete/{{this.id}}?_method=DELETE" method="POST">
+                <button class="btnDevour" type="submit">Delete it</button>
+              </form>
+            </li>
+            {{/if}}
+            {{/each}}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>
