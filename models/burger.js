@@ -10,13 +10,12 @@ var burger = {
     console.log("this is working")
   },
   create: function (cols, vals, cb) {
-    orm.create("burgers", cols, vals, function (res) {
+    orm.insertOne("burgers", cols, vals, function (res) {
       cb(res);
     });
-    console.log("this is creste one")
   },
 
-  updatedOne: function (cb) {
+  updated: function (cb) {
     orm.updateOne("burgers", objColVals, condition, function (res) {
       cb(res);
     });
