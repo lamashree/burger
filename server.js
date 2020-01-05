@@ -6,7 +6,8 @@ var app = express();
 var Parser = require('body-parser');
 app.use(express.static("public"));
 
-
+var methodOverride = require('method-override')
+app.use(methodOverride('_method'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
