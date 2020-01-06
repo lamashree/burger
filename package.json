@@ -16,9 +16,9 @@
     "partials": "^0.1.0"
   },
   "development": {
-    "username": "tj6yra93osxxv786",
-    "password": "nf3lmohcsm0k98g5",
-    "database": "h6ah04di8jzv0dvt",
+    "username": "pqqu2uh19uer46qw",
+    "password": "z7c9e4byxezijehb",
+    "database": "e3b342t243vctltp",
     "host": "ixqxr3ajmyapuwmi.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
   },
