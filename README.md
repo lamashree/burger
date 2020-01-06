@@ -24,3 +24,4 @@ Click here for link of application.
  ##  Screenshort
   ![post an item page](/public/assets/img/pic.jpg)
 
+This is how **Eat-Da-Burger** app is look like. This is very simple app. The user can add the Designer burger that will add burger name to the Designer burger list which can be seen above the **create your burger** and if user already finished eating the burger from the list they can devoured the burger and that will add the name of the burger to the old favorite and if they no more want to see burger in the list then user can click on the delete button that will permanently detele the burger.
