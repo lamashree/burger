@@ -16,10 +16,10 @@
     "partials": "^0.1.0"
   },
   "development": {
-    "username": "tn0zlcw00u6add41",
-    "password": "f6w5qmouu9i6kll0",
-    "database": "b0hpsalxkcjdnr7g",
-    "host": "qbct6vwi8q648mrn.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    "username": "tj6yra93osxxv786",
+    "password": "nf3lmohcsm0k98g5",
+    "database": "h6ah04di8jzv0dvt",
+    "host": "ixqxr3ajmyapuwmi.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
   },
   "devDependencies": {},
