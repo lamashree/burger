@@ -23,7 +23,7 @@ Click here for link of application.
 7. Open any Browser and type **localhost:8080** and hit enter.
 
 ## Instruction 
-https://uwa.bootcampcontent.com/UWA-Bootcamp/UW-SEA-FSF-PT-08-2019-U-C/blob/master/class-content/14-handlebars/02-Homework/Instructions/homework_instructions.md#model-setup
+[please go to the link for instruction](https://uwa.bootcampcontent.com/UWA-Bootcamp/UW-SEA-FSF-PT-08-2019-U-C/blob/master/class-content/14-handlebars/02-Homework/Instructions/homework_instructions.md#model-setup)
 ## Screenshort
   ![post an item page](/public/assets/img/pic.jpg)
 
